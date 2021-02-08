@@ -1,0 +1,2 @@
+D:\VS2019代码存放位置\test.2.8\Debug\test.2.8.exe
+D:\VS2019代码存放位置\test.2.8\Debug\test.2.8.pdb
