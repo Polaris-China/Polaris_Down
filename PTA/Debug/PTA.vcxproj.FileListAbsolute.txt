@@ -1,0 +1,2 @@
+D:\VS2019代码存放位置\PTA\Debug\PTA.exe
+D:\VS2019代码存放位置\PTA\Debug\PTA.pdb
