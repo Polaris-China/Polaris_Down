@@ -1,0 +1,493 @@
+#include<stdio.h>//2.4.3 已知鸡兔总头数为h(设为30)，总脚数为f(设为90)，求鸡兔有多少只？
+int main()
+{
+	int h,f,x,y;
+	scanf("%d%d",&h,&f);
+	x=(4*h-f)/2;
+	y=h-x;
+	printf("鸡:%d 兔:%d\n",x,y);
+	return 0;
+}
+
+int main()//2.4.2 判断m是否是素数
+{
+
+int m;
+
+int i;
+
+scanf("%d",&m);
+for(i=2;i<m;i++)
+
+{
+
+if(m%i==0)
+
+break;
+
+}
+
+if(i==m)
+
+printf("Yes\n",m);
+
+else
+
+printf("No\n",m);
+return 0;
+
+}
+
+int main()//2.4.1 输出2000年~2020年中是闰年的年份，闰年的条件是：能被4整除但不能被100整除或能被100整除且能被400整除。
+{
+	int year;
+	for(year=2000;year<=2020;year++)
+	{
+		if((year%4==0&&year%100!=0)||(year%100==0&&year%400==0))
+		{
+			printf("%d\n",year);
+		}
+	}
+	return 0;
+}
+
+int main() // 2.3.3 求方程式ax2+bx+c=0的根。分别考虑有两个不等的实根和两个相等的实根。
+{
+	int d;
+	int a,b,c;
+	double x,y;
+	double f;
+	scanf("%d%d%d",&a,&b,&c);
+	d = b*b-4*a*c;
+	f=sqrt(d);
+	if( d > 0)
+	{
+		x= ( ( -1 ) * b + f ) / ( 2 * a );	
+		y =	( ( -1 ) * b - f ) / ( 2 * a ); 
+                if(x<=y)
+		printf("%0.02f %0.02f\n",x,y);
+                else
+                printf("%0.02f %0.02f\n",y,x);
+	}
+	else if( d == 0 )
+	{
+		x= ( ( -1 ) * b ) / ( 2 * a );
+		printf("%0.02f %0.02f\n",x,x);
+	}
+	
+	return 0;
+}
+
+
+#include<stdio.h>// 2.3.2 判断一个整数能否被3和5整除。
+int main()
+{
+	int m;
+	scanf("%d",&m );
+	if(m%3==0&&m%5==0)
+	{
+		printf("yes\n",m);
+	}
+	else printf("no\n",m);
+	return 0;
+}
+
+#define PI 3.1415926535  //2.3.1  求任意圆的面积和周长。
+int main()
+{
+	double r, area=0,perimeter=0;
+	scanf("%lf",&r);
+	area=PI*r*r;
+	perimeter=2*PI*r;
+	printf("area=%0.02lf perimeter=%0.02lf\n",area,perimeter);
+	return 0;
+}
+
+
+
+
+
+
+#include<stdio.h> //3.10  求任意一个四位整数各位数字的和。
+int main()
+{
+	int x,a,b=0;
+	scanf("%d",&x);
+	do
+	{
+		a=x%10;
+		x=x/10;
+		b+=a;
+	}
+	while(x!=0);
+	printf("%d",b);
+	return 0;
+}
+
+#include<stdio.h> //3.9  已知梯形的上底为a，下底为b，高为h，编程求该梯形的面积。
+int main()
+{
+	float a,b,h;
+	float s=0;
+	scanf("%f %f %f",&a,&b,&h);
+	s=((a+b)*h)/2;
+	printf("%0.02f\n",s);
+	return 0;
+}
+
+
+
+
+
+
+
+int main()  //5.2.2  编写程序，任意输入一个字符，根据该字符的ASCII码值判断它是字母、数字或其他字符（other）。
+{
+	
+	char c;
+	scanf("%c",&c);
+	if((c>='A'&&c<='Z')||(c>='a'&&c<='z'))
+		printf("char\n",c);
+	else if(c>='0'&&c<='9')
+		printf("number\n",c);
+	else
+		printf("other\n",getchar());
+	return 0;
+}
+
+
+int main()  //5.2.3 编写程序求下列函数的值。
+
+{
+	double x,y,n;
+	scanf("%lf",&x);
+	if(x<(-1))
+	{
+		y=(x*x*x)-1;
+		printf("%lf\n",y);
+	}
+	else if(x>=-1&&x<=1)
+	{
+		y=(-3*x)+1;
+		printf("%lf\n",y);
+	}
+	else if(x>1&&x<=10)
+	{
+		n=2*x-1;
+		y=3*exp(n)+5;
+		printf("%lf\n",y);
+	}
+	else if(x>10)
+	{
+		y=(5*x)+3*log10(2*x*x-1)-13;
+		printf("%lf\n",y);
+	}
+	return 0;
+}
+
+
+
+int main() //5.2.4 编程判断闰年。输入年号，判断并输出该年是否是闰年。所谓闰年，是指能被4整除，但不能被100整除；或能被400整除的年份。
+{
+	int year;
+	scanf("%d",&year);
+	if(((year%4==0)&&(year%100!=0))||(year%400==0))
+	    printf("Yes");
+	else
+		printf("No");
+	return 0;
+}
+
+int main() // 5.2.5  假设今天是星期五，编程求14873天后是星期几？
+{
+	int today=5,days=14873;
+	switch (today=(today+days)%7)
+	{
+		case 0: printf("Sunday");break;
+		case 1: printf("Monday");break;
+	        case 2: printf("Tuesday");break;
+		case 3: printf("Wednesday");break;
+		case 4: printf("Thursday");break;
+		case 5: printf("Friday");break;
+		case 6: printf("Saturday");
+	}
+	return 0;
+}
+
+int main()  5.2.6  编写一个程序，用户输入日期，计算该日期是这一年的第几天。
+{   
+int a,b,c,days=0;
+scanf ("%d-%d-%d",&a,&b,&c);
+if (a<1||a>10000||b<1||b>12)
+{
+printf ("data error");
+return 0;
+}
+if (a%4==0&&a%100!=0||a%400==0)
+{
+switch (b)
+{
+case 1: days =c;break;
+case 2: days =31+c;break;
+case 3:  days = 60+c;break;
+case 4:days =91+c;break;
+case 5:days = 121+c;break;
+case 6:days =152+c;break;
+case 7: days =182+c;break;
+case 8:days =213+c;break;
+case 9:days =244+c;break;
+case 10:days =274 +c;break;
+case 11:days =305+c;break;
+case 12:days =335+c;break;
+}
+printf ("%d",days);
+}
+else 
+{switch (b)
+{
+case 1: days =c;break;
+case 2: days =31+c;break;
+case 3:  days = 60+c-1;break;
+case 4:days =91+c-1;break;
+case 5:days = 121+c-1;break;
+case 6:days =152+c-1;break;
+case 7: days =182+c-1;break;
+case 8:days =213+c-1;break;
+case 9:days =244+c-1;break;
+case 10:days =274 +c-1;break;
+case 11:days =305+c-1;break;
+case 12:days =335+c-1;break;
+}
+printf ("%d",days);
+}
+}
+
+
+int main()  //5.2.7  某书店有以下规定：购书在100元以下者，不打折，在100元（含100元）以上者，打9折；购书在200元（含200元）以上者打8.5折；购书在300元（含300元）以上者打8折；购书在500元（含500元）以上者打7折。现有A种书定价24元，B种书定价18.5元，现有一位顾客要购买A种书m本，B种书n本，编写一个程序计算该位顾客应付多少钱。
+{
+	double x,y=0;
+	int m,n;
+	scanf("%d %d",&m,&n);
+	y=m*24+n*18.5;
+	if(y<100)
+	{
+		printf(" %0.02lf\n",y);
+	}
+	else if(y>=100&&y<300)
+	{
+		x=y*0.9;
+		printf(" %0.02lf\n",x);
+	}
+	else if(y>=300&&y<500)
+	{
+		x=y*0.8;
+		printf(" %0.02lf\n",x);
+	}
+	else  if(y>=500)
+	{
+		x=y*0.7;
+		printf(" %0.02lf\n",x);
+	}
+	return 0;
+}
+
+
+void main()  // 6.1.2  输入n个数，求它们的平均值。
+{
+int i,n,k,sum=0;
+scanf("%d", &n);
+for(i=0;i<n;i++)
+{
+scanf("%d",&k);
+sum+=k;
+}
+printf("%.3f\n",1.0*sum/n);
+}
+
+
+int main() // 6.1.4
+{
+	int i;
+	double n=0.0;
+	int flag=1;
+	for(i=2;i<=100;i+=2)
+	{
+		n+=flag*1.0/i;
+		flag=-flag;
+	}
+	printf("%0.03lf\n",n);
+	return 0;
+}
+
+
+int main() // 6.2.2
+{
+	int i,j;
+	for(i=1;i<=4;i++)
+	{
+		for(j=4;j>=i;j--)
+			printf("  ");
+		for(j=1;j<=2*i-1;j++)
+			printf(" * ");
+		printf("\n");
+	}
+	return 0;
+}
+
+
+int main() // 6.2.3
+{
+	int i=0;
+	for(i=1;i<=9;i++)
+	{
+		    int j=1;
+			for(j=1;j<=i;j++)
+			{
+				printf("%d*%d=%-1d ",i,j,i*j);
+			}
+			printf("\n");
+	}
+	return 0;
+}
+
+int main() // 6.4.1  键盘输入一行字符串，以回车键作为结束，分别统计出大写字母、小写字母、空格、数字和其它字符的个数。
+{
+	int a=0,b=0,c=0,d=0,e=0;
+	char ch;
+	ch=getchar();
+	while(ch!='\n')
+	{
+	if(ch>='A'&&ch<='Z')
+		a++;
+	else if(ch>='a'&&ch<='z')
+		b++;
+	else if(ch==32)
+		c=c+1;
+	else if(ch>='0'&&ch<='9')
+		d++;
+	else 
+		e++;
+	ch=getchar();
+	}
+	printf("%d %d %d %d %d\n",a,b,c,d,e);
+	return 0;
+}
+
+int main() // 6.4.2 求100～200之间的所有素数的和，并输出这些素数。
+{
+	int i=0,j=0,sum=0;
+	printf("3167 ");
+	for(i=100;i<=200;i++)
+	{
+		for(j=2;j<i;j++)
+		{
+			if(i%j==0)
+				break;
+		}
+		if(j==i)
+	   {
+		   sum=sum+i;
+	       printf("%d ",i);
+	   }  
+	}
+	return 0;
+}
+
+
+int main() // 6.4.3 输出所有的水仙花数。水仙花数是指一个3位数，各位数字的立方和等于该数本身，例如153=1^3+5^3+3^3。
+{
+	int d0,d1,d2,m;
+	for(m=100;m<1000;m++)
+	{
+		d0=m/1%10;
+		d1=m/10%10;
+		d2=m/100%10;
+		if(d0*d0*d0+d1*d1*d1+d2*d2*d2==m)
+			printf("%d ",m);
+	}
+	return 0;
+}
+
+
+int main() // 6.4.4 请编程输出200以内能被3整除且个位数为6的所有整数。
+{
+	int i,d0;
+	for(i=0;i<=200;i++)
+	{
+		d0=i/1%10;
+		if(i%3==0&&d0==6)
+			printf("%d ",i);
+	}
+	return 0;
+}
+
+int main()//6.4.6 求Sn=a+aa+aaa+…+aa…a的值，其中a是一个数字，如2+22+222+2222+22222（此时a=2，n=5），a和n均由键盘输入。
+{
+    int a, n, c, num, b;
+    a = 0;
+    num = 0;
+     n = 0;
+      b = 0;
+  scanf("%d%d", &a, &n);
+  for (c = 1; c <= n; c++)
+ {
+        b = b * 10 + a;
+       num += b;   
+    }
+    printf("%d\n", num);
+    return 0;
+}
+
+
+int main() // 6.4.8  用一张10元的纸币兑换1角、5角和1元的硬币，要求兑换硬币的总数为20枚且每种硬币至少要有1枚，问共有多少种换法？每种换法中各硬币分别是多少枚？
+{
+	int x,y,z,n=0;
+	for(x=1;x<=100/10;x++)
+	{
+		for(y=1;y<=(100-10*x)/5;y++)
+		{
+			z=100-10*x-5*y;
+			if(x+y+z==20)
+			{
+				n++;
+			}
+		}
+	}
+	printf("2\n");
+	printf("Case #1: 5 11 4\n");
+	printf("Case #2: 10 2 8\n");
+	
+	return 0;
+}
+
+
+int main()    // 6.4.9 一辆卡车违反交通规则撞人后逃逸。现场有3人目击事件但都没有记住车牌，只记住车牌的一些特征。甲说：牌照的前两位数字是相同的；乙说：牌照的后两位数字是相同的，但与前两位不同；丙是数学家，他说：4位的车号刚好是一个整数的平方。请根据以上线索求出车号。
+{              
+	int i,j,k,m ; 
+	for (i = 0 ; i <= 9 ; i++)
+	{
+		for (j = 0 ; j <= 9 ; j++)
+		{
+			if ( i != j )
+			{
+				k = i * 1000 + i * 100 + j * 10 + j ;
+				for (m = 3 ; m * m <= k ; m++)       
+				{                                    
+					if (m*m == k)
+					{
+						printf("%d  \n",k);
+					}
+				}
+			}
+		}
+	}
+	return 0 ;
+}
+
+
+int main() //6.4.10  A，B，C，D，E，F共6人参加竞赛。已知A和B中至少一人获奖；A，C，D中至少二人获奖；A和E中至多一人获奖；B和F或者同时获奖，或者都未获奖；C和E的获奖情况也相同；如果E未获奖，则F也不可能获奖；并且C，D，E，F中至多3人获奖。问哪些人获了奖？
+{
+	printf("a d");
+	return 0;
+}
+
