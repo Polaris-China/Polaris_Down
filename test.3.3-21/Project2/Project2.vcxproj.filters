@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="真考97二级C.cpp">
+    <ClCompile Include="真考97.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

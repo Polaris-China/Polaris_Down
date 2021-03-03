@@ -38,4 +38,3 @@ void NONO()
     fclose(fp);
     fclose(wf);
 }
-
