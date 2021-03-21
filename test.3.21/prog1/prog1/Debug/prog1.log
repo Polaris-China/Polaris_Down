@@ -1,0 +1,6 @@
+﻿  prog1.c
+D:\KSWJJ\24000001_Answer\prog1\prog1.c(17,7): warning C4013: “gets”未定义；假设外部返回 int
+D:\KSWJJ\24000001_Answer\prog1\prog1.c(30,8): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\KSWJJ\24000001_Answer\prog1\prog1.c(31,8): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\KSWJJ\24000001_Answer\prog1\prog1.c(33,5): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  prog1.vcxproj -> D:\KSWJJ\24000001_Answer\prog1\Debug\prog1.exe
